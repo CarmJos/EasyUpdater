@@ -23,6 +23,33 @@ Advanced plugin and config updater, which can keep plugins up-to-dates and mixin
 
 ## Features & Advantages
 
+## Usages & Examples
+
+Download the latest version of the EasyUpdater from 
+the [releases](https://github.com/CarmJos/EasyUpdater/releases)
+and put it in the folder of your application. 
+
+Then, create a new file named `updates.yml` or any other name you like.
+
+```yaml
+# Import other update configs, which will be loaded before this file.
+# All configs will be run in order.
+import: 
+  - "<path-to-other-config>/general-updates.yml"
+    
+# Transfer files from the sources.
+transfer:
+  
+  
+# Mixin specific configuration files.
+mixin:
+
+
+```
+
+Finally, run `java -jar EasyUpdater.jar [config-file-path]` to start the updater 
+before your own application boot up.
+
 ## Support and Donation
 
 If you appreciate this plugin, consider supporting me with a donation!
