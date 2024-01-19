@@ -8,7 +8,8 @@ public class FileFinderTest {
 
     @Test
     public void test() {
-        List<File> files = FileFinder.find("src\\main\\java\\cc\\carm\\app\\easyupdater\\utils\\(.*).java");
+        String path = "src/test/resources";
+        List<File> files = FileFinder.find(path);
         System.out.println("Found:" + files.size());
         files.stream().map(file -> " -> " + file.getAbsolutePath()).forEach(System.out::println);
     }
