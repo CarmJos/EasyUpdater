@@ -31,7 +31,7 @@ public class TransferAction {
     }
 
     public void execute() throws Exception {
-        List<File> sources = findFiles(sourcePattern);
+        List<File> sources = FileFinder.find(sourcePattern);
         if (sources.isEmpty()) throw new Exception("No any matched source file");
 
         if (targetPattern.endsWith(File.separator)) {
@@ -53,7 +53,7 @@ public class TransferAction {
 
     public void transferFile(@NotNull List<File> sourceFiles,
                              @NotNull File targetDirectory, String targetFilePattern) {
-        File sourceFile = fetchLastModified(sourceFiles); // Fetch last modified file
+        File sourceFile = lastModifiedIn(sourceFiles); // Fetch last modified file
         String targetName = sourceFile.getName();
 
         String renamePattern = options.getString("rename");
@@ -110,11 +110,7 @@ public class TransferAction {
         }
     }
 
-    public List<File> findFiles(String pattern) {
-        return FileFinder.findFiles(pattern);
-    }
-
-    public File fetchLastModified(List<File> files) {
+    public File lastModifiedIn(List<File> files) {
         return files.stream().max(Comparator.comparingLong(File::lastModified)).orElse(null);
     }
 

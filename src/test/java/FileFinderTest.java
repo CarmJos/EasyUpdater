@@ -8,7 +8,7 @@ public class FileFinderTest {
 
     @Test
     public void test() {
-        List<File> files = FileFinder.findFiles("C:\\Users\\(.*)\\Desktop\\(.*).lnk");
+        List<File> files = FileFinder.find("C:\\Users\\(.*)\\Desktop\\(.*).lnk");
 
         System.out.println(files.size());
         for (File file : files) {
@@ -16,7 +16,7 @@ public class FileFinderTest {
         }
 
         System.out.println();
-        files = FileFinder.findFiles("src\\main\\java\\cc\\carm\\app\\easyupdater\\utils\\(.*).java");
+        files = FileFinder.find("src\\main\\java\\cc\\carm\\app\\easyupdater\\utils\\(.*).java");
 
         System.out.println(files.size());
         for (File file : files) {
