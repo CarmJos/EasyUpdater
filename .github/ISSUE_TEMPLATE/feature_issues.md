@@ -1,23 +1,23 @@
 ---
-name: 功能需求 
-about: 希望我们提供更多的功能。 
+name: Feature Requirements
+about: Hope more features.
 title: ''
 labels: enhancement 
 assignees: ''
 ---
 
-### **功能简述**
+### **Description**
 
-简单的描述一下你想要的功能
+[//]: # (Briefly describe the features you want.)
 
-### **需求来源**
+### **Source**
 
-简单的描述一下为什么需要这个功能。
+[//]: # (A brief description of why you need this feature.)
 
-### **功能参考**(可选)
+### **Reference**(Optional)
 
-如果有相关功能的参考，如文本、截图，请提供给我们。
+[//]: # (If there is a reference to the relevant functions, such as text, screenshots, please provide it to us.)
 
-### **附加内容**
+### **Additional**
 
-如果有什么小细节需要重点注意，请在这里告诉我们。
+[//]: # (If there's a small detail that needs attention, let us know here.)
