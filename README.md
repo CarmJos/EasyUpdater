@@ -23,11 +23,16 @@ Advanced plugin and config updater, which can keep plugins up-to-dates and mixin
 
 ## Features & Advantages
 
+- **Pattern (Regex) support!**
+- Transfer files from the sources!
+- Mixin specific configuration files!
+- Import other update configs!
+
 ## Usages & Examples
 
-Download the latest version of the EasyUpdater from 
+Download the latest version of the EasyUpdater from
 the [releases](https://github.com/CarmJos/EasyUpdater/releases)
-and put it in the folder of your application. 
+and put it in the folder of your application.
 
 Then, create a new file named `updates.yml` or any other name you like.
 
@@ -65,7 +70,7 @@ mixin:
 
 ```
 
-Finally, run `java -jar EasyUpdater.jar [config-file-path]` to start the updater 
+Finally, run `java -jar EasyUpdater.jar [config-file-path]` to start the updater
 before your own application boot up.
 
 ## Support and Donation
