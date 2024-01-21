@@ -86,7 +86,7 @@ public class TransferAction {
 
         List<Pattern> filters = new HashSet<>(options().getStringList("filter"))
                 .stream().map(Pattern::compile).collect(Collectors.toList());
-        boolean override = options().getString("exists", "OVERRIDE").equalsIgnoreCase("override");
+        boolean override = options().getBoolean("override", false);
 
         for (File file : sourceFiles) {
             if (filtered(file.getName(), filters)) continue; // Filtered

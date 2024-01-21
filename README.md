@@ -34,16 +34,34 @@ Then, create a new file named `updates.yml` or any other name you like.
 ```yaml
 # Import other update configs, which will be loaded before this file.
 # All configs will be run in order.
-import: 
+import:
   - "<path-to-other-config>/general-updates.yml"
-    
+
 # Transfer files from the sources.
 transfer:
-  
-  
+  "task1":
+    source: "<path-to-plugin-source>/ExamplePlugin-(.*)-SNAPSHOT.jar" # The source file path.
+    target: "plugins/ExamplePlugin(.*).jar" # The target file path.
+    options:
+      rename: "ExamplePlugin-$1.jar"
+  "task2":
+    source: "<path-to-plugin-source>/some-files/"
+    target: "libraries" # Target folder
+    options:
+      override: true # Override the files in the target folder.
+      filter:
+        - "*.log"
+        - "*.log.gz"
+
 # Mixin specific configuration files.
 mixin:
-
+  task1:
+    schema: YAML # Optional, auto-detected by file suffix if not provided.
+    source: "<path-to-source>/xxx.yaml"
+    target: "plugins/some-plugin/config.yml"
+  task2:
+    source: "<path-to-source>/survival.properties"
+    target: "server.properties"
 
 ```
 
@@ -64,3 +82,4 @@ Many thanks to Jetbrains for kindly providing a license for us to work on this a
 
 This project's source code is licensed under
 the [GNU LESSER GENERAL PUBLIC LICENSE](https://www.gnu.org/licenses/lgpl-3.0.html).
+ 
