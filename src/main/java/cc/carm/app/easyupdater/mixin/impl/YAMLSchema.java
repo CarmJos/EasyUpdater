@@ -28,7 +28,7 @@ public class YAMLSchema implements MixinSchema<YamlConfiguration> {
         YamlConfiguration targetYml = parse(target);
         if (targetYml == null) throw new Exception("File " + target.getAbsolutePath() + " is a yaml file!");
 
-        source.getKeys(true).forEach(s -> targetYml.set(s, source.getString(s)));
+        source.getKeys(true).forEach(s -> targetYml.set(s, source.get(s)));
         targetYml.save(target);
     }
 }
