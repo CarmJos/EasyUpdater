@@ -54,7 +54,7 @@ public class Main {
     }
 
     private static <T> ActionResult executeAll(Map<String, T> tasks, ThrowableTask<T> executor) {
-        int i = 0, success = 0, failed = 0;
+        int i = 1, success = 0, failed = 0;
         for (Map.Entry<String, T> entry : tasks.entrySet()) {
             Logging.debug(" #" + i + " -> Executing " + entry.getKey());
             try {
@@ -65,6 +65,7 @@ public class Main {
                 e.printStackTrace();
                 failed++;
             }
+            i++;
         }
         return new ActionResult(success, failed);
     }

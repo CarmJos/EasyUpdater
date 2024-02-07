@@ -33,6 +33,7 @@ public class UpdateConfig {
         List<UpdateConfig> imports = new ArrayList<>();
         for (String path : conf.getStringList("imports")) {
             try {
+                Logging.debug("Importing config [" + path + "] ...");
                 UpdateConfig config = parse(path);
                 if (config != null) imports.add(config);
             } catch (Exception e) {
@@ -42,8 +43,8 @@ public class UpdateConfig {
         }
 
         for (UpdateConfig config : imports) { // Put if not exists
-            transferActions.forEach(transferActions::putIfAbsent);
-            mixinActions.forEach(mixinActions::putIfAbsent);
+            config.transferActions.forEach(transferActions::putIfAbsent);
+            config.mixinActions.forEach(mixinActions::putIfAbsent);
         }
 
         return new UpdateConfig(transferActions, mixinActions);
