@@ -152,7 +152,7 @@ public class TransferAction {
 
     public String rename(String source, List<String> list) {
         for (int var1 = 1; var1 <= list.size(); var1++) {
-            source = source.replaceFirst("\\$" + var1, list.get(var1));
+            source = source.replaceFirst("\\$" + var1, list.get(var1 - 1));
         }
         return source;
     }
